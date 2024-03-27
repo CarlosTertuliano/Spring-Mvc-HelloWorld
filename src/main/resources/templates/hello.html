@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Hello World</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+  <p th:text="|${name} Seja bem vindo!|" />
+  <br> <br>
+  <h2>Cadastro:</h2>
+  <br>
+  <form action="#" th:action="@{/cadastrar}" th:object="${usuario}" method="post">
+    <label for="nome">Nome: </label>
+    <input type="text" id="nome" th:name="nome" th:field="*{nome}" required> <br> <br>
+    <label for="dataNascimento">Data de nascimento: </label>
+    <input type="date" id="dataNascimento" th:name="dataNascimento" th:field="*{dataNascimento}" required> <br> <br>
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>
